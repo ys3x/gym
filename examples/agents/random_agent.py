@@ -1,6 +1,8 @@
 import argparse
 import sys
 
+#import gym.spaces
+
 import gym
 from gym import wrappers, logger
 
@@ -48,4 +50,7 @@ if __name__ == '__main__':
             # Video is not recorded every episode, see capped_cubic_video_schedule for details.
 
     # Close the env and write monitor result info to disk
-    env.close()
+    #env.close()
+    
+    # https://github.com/openai/gym/issues/893
+    env.env.close()
